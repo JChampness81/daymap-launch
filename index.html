@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daymap Quick Launch — Charles Campbell College</title>
+<style>
+  :root {
+    --bg: #EEF1F5;
+    --surface: #FFFFFF;
+    --ink: #18293B;
+    --muted: #5C6B7A;
+    --accent: #234E8C;
+    --accent-soft: #E8EFF8;
+    --line: #D6DDE6;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding: 32px 20px 64px;
+  }
+
+  .wrap { max-width: 880px; margin: 0 auto; }
+
+  /* ---- Header ---- */
+  header { margin-bottom: 28px; }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    font-size: clamp(26px, 5vw, 36px);
+    letter-spacing: -0.02em;
+    font-weight: 750;
+    line-height: 1.1;
+  }
+
+  .sub {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 60ch;
+  }
+
+  /* ---- Notice banner ---- */
+  .notice {
+    margin: 22px 0 30px;
+    background: var(--accent-soft);
+    border: 1px solid #C9DAF0;
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    font-size: 14px;
+    color: #2A3F58;
+  }
+  .notice strong { color: var(--accent); }
+
+  /* ---- Grid ---- */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+
+  .tile {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 18px 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    position: relative;
+  }
+
+  .tile:hover, .tile:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(24, 41, 59, 0.10);
+    border-color: var(--accent);
+    outline: none;
+  }
+
+  .tile:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+  .tile-name {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tile-name::after {
+    content: "→";
+    margin-left: auto;
+    color: var(--accent);
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.12s ease, transform 0.12s ease;
+  }
+  .tile:hover .tile-name::after,
+  .tile:focus-visible .tile-name::after { opacity: 1; transform: translateX(0); }
+
+  .tile-desc {
+    margin-top: 6px;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  .tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: #8a5a00;
+    background: #FBF0D9;
+    border: 1px solid #F0DCA8;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  /* ---- Footer ---- */
+  footer {
+    margin-top: 34px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    align-items: center;
+  }
+  footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tile, .tile-name::after { transition: none; }
+    .tile:hover, .tile:focus-visible { transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Charles Campbell College</div>
+    <h1>Daymap Quick Launch</h1>
+    <p class="sub">Direct links to the main Daymap functions. Use these to get where you need to go.</p>
+  </header>
+
+  <div class="notice">
+    <strong>Why this page exists:</strong> a recent Daymap update has hidden the main navigation menu.
+    The functions all still work — they're just hard to reach. These links take you straight to them while
+    the issue is being fixed. Tip: bookmark this page so it's always one click away. Links open in a new tab.
+  </div>
+
+  <div class="grid">
+
+    <a class="tile" href="https://ccc.daymap.net/daymap/staff/dayplan.aspx" target="_blank" rel="noopener">
+      <div class="tile-name">Day Plan</div>
+      <div class="tile-desc">Your daily home page — timetable, classes and messages.</div>
+    </a>
+
+    <a class="tile" href="https://ccc.daymap.net/daymap/staff/rolladminstudent.aspx" target="_blank" rel="noopener">
+      <div class="tile-name">Roll Admin — Student</div>
+      <div class="tile-desc">Manage attendance and roll marking by student.</div>
+    </a>
+
+    <a class="tile" href="https://ccc.daymap.net/daymap/staff/rolladminclass.aspx?EventID=3099515" target="_blank" rel="noopener">
+      <div class="tile-name">Roll Admin — Class</div>
+      <div class="tile-desc">Mark the roll for a class.</div>
+      <span class="tag">Opens a set class</span>
+    </a>
+
+    <a class="tile" href="https://ccc.daymap.net/daymap/staff/absentstudents.aspx" target="_blank" rel="noopener">
+      <div class="tile-name">Absent Students</div>
+      <div class="tile-desc">View and manage students marked absent.</div>
+    </a>
+
+    <a class="tile" href="https://ccc.daymap.net/daymap/staff/absentnotification.aspx" target="_blank" rel="noopener">
+      <div class="tile-name">Absence Notifications</div>
+      <div class="tile-desc">Send and review absence notifications.</div>
+    </a>
+
+    <a class="tile" href="https://ccc.daymap.net/daymap/staff/find.aspx?Cmd=student" target="_blank" rel="noopener">
+      <div class="tile-name">Student Search</div>
+      <div class="tile-desc">Look up an individual student record.</div>
+    </a>
+
+    <a class="tile" href="https://ccc.daymap.net/daymap/staff/StudentGroups.aspx" target="_blank" rel="noopener">
+      <div class="tile-name">Student Groups</div>
+      <div class="tile-desc">View and manage student groups.</div>
+    </a>
+
+    <a class="tile" href="https://ccc.daymap.net/daymap/staff/help/videoGuides.aspx" target="_blank" rel="noopener">
+      <div class="tile-name">Help &amp; Video Guides</div>
+      <div class="tile-desc">Daymap how-to videos and guides.</div>
+    </a>
+
+  </div>
+
+  <footer>
+    <a href="https://ccc.daymap.net/daymap" target="_blank" rel="noopener">Open Daymap home ↗</a>
+    <span>Temporary staff workaround · update as new links are found</span>
+  </footer>
+
+</div>
+</body>
+</html>
